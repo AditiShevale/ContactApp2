@@ -21,7 +21,18 @@ public class Network {
 
     final static String BASE_URL="https://api.androidhive.info/json/contacts.json";
 
+    public static List<Contact> fetchContactData(URL url) throws JSONException {
+        String jsonResponse = null;
+        try {
+            jsonResponse = getResponseFromHttpUrl(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<Contact> contacts = extractFeatureFromJson(jsonResponse);
+        Log.i("adu", String.valueOf(contacts));
+        return contacts;
 
+    }
 
 
     public static URL buildUrl(){
@@ -62,10 +73,13 @@ public class Network {
             throws JSONException {
 
         List<Contact> contacts = new ArrayList<>();
+
         JSONArray ar = new JSONArray(contactJson);
+
         for (int i = 0; i < ar.length(); i++) {
 
             JSONObject ob = ar.getJSONObject(i);
+
             String name = ob.getString("name");
             String phone = ob.getString("phone");
             String image = ob.getString("image");
@@ -81,16 +95,5 @@ public class Network {
         return contacts;
     }
 
-    public static List<Contact> fetchContactData(URL url) throws JSONException {
-        String jsonResponse = null;
-        try {
-            jsonResponse = getResponseFromHttpUrl(url);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        List<Contact> contacts = extractFeatureFromJson(jsonResponse);
-        Log.i("adu", String.valueOf(contacts));
-        return contacts;
 
-    }
 }

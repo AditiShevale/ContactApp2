@@ -1,6 +1,7 @@
 package com.example.aditi.contactapp2;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,13 +19,15 @@ public class Recycler extends RecyclerView.Adapter<Recycler.MyViewHolder> {
 
 
 
-    public Recycler(MainActivity mainActivity, List<Contact> contactList){
+    public Recycler( List<Contact> contactList){
         mContactList = contactList;
     }
 
+
+
     @NonNull
     @Override
-    public Recycler.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.custom_list,parent,false);
         return new MyViewHolder(itemView);
@@ -38,7 +41,7 @@ public class Recycler extends RecyclerView.Adapter<Recycler.MyViewHolder> {
         Picasso.with(context).load(contact.getImage()).into(holder.contactImg);
         Log.i("xyz",String.valueOf(contact.getImage()
                ));
-        //holder.bind(mContactList.get(position));
+        holder.contactImg.setImageURI(Uri.parse(contact.getImage()));
     }
 
     @Override
@@ -54,7 +57,6 @@ public class Recycler extends RecyclerView.Adapter<Recycler.MyViewHolder> {
             super(itemView);
             contactImg = itemView.findViewById(R.id.imageView);
         }
-
 
     }
 }
