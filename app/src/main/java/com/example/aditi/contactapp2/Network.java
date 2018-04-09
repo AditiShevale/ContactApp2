@@ -81,14 +81,15 @@ public class Network {
             JSONObject ob = ar.getJSONObject(i);
 
             String name = ob.getString("name");
+            Log.i("nat",name);
+
             String phone = ob.getString("phone");
+            Log.i("nat",phone);
             String image = ob.getString("image");
+            Log.i("nat",image);
 
             Contact contacts1 = new Contact(name, image, phone);
             contacts.add(contacts1);
-            Log.i("nat", String.valueOf(ob));
-
-
 
         }
 

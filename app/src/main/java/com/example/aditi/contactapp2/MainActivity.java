@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
    private Recycler mRecyclerContact;
    private RecyclerView mRecyclerView;
-   private ProgressBar mProgressBar;
+   //private ProgressBar mProgressBar;
 
 
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mRecyclerView = findViewById(R.id.recyclerView);
-        mProgressBar = findViewById(R.id.progressBar);
+        //mProgressBar = findViewById(R.id.progressBar);
 
         RecyclerView.LayoutManager mLayoutManager = new
                 LinearLayoutManager(this);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            mProgressBar.setVisibility(View.VISIBLE);
+           // mProgressBar.setVisibility(View.VISIBLE);
         }
 
         protected List<Contact> doInBackground(URL... urls) {
@@ -70,10 +70,12 @@ public class MainActivity extends AppCompatActivity {
 //            Toast.makeText(MainActivity.this, String.valueOf(contactList),
 //                    Toast.LENGTH_SHORT).show();
             super.onPostExecute(contactList);
-            mProgressBar.setVisibility(View.INVISIBLE);
+            //mProgressBar.setVisibility(View.INVISIBLE);
             mRecyclerContact = new Recycler(contactList);
-            Log.i("lo", String.valueOf(contactList));
+            //Log.i("lo", String.valueOf(contactList));
             mRecyclerView.setAdapter(mRecyclerContact);
+            mRecyclerContact.notifyDataSetChanged();
+
 
         }
     }
