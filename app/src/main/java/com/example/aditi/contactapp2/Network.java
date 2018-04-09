@@ -66,6 +66,13 @@ public class Network {
         for (int i = 0; i < ar.length(); i++) {
 
             JSONObject ob = ar.getJSONObject(i);
+            String name = ob.getString("name");
+            String phone = ob.getString("phone");
+            String image = ob.getString("image");
+
+            Contact contacts1 = new Contact(name, image, phone);
+            contacts.add(contacts1);
+            Log.i("nat", String.valueOf(ob));
 
 
 
@@ -82,6 +89,8 @@ public class Network {
             e.printStackTrace();
         }
         List<Contact> contacts = extractFeatureFromJson(jsonResponse);
+        Log.i("adu", String.valueOf(contacts));
         return contacts;
+
     }
 }

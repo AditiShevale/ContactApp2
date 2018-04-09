@@ -49,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPreExecute();
             mProgressBar.setVisibility(View.VISIBLE);
         }
-//display nae hota main Scrn pr  pura network class cehck kiya ?? yepuch raha hu log me dath yes
-        @Override
+
         protected List<Contact> doInBackground(URL... urls) {
 
             List<Contact> result = null;

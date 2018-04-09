@@ -36,8 +36,8 @@ public class Recycler extends RecyclerView.Adapter<Recycler.MyViewHolder> {
         Contact contact = mContactList.get(position);
         Context context = holder.contactImg.getContext();
         Picasso.with(context).load(contact.getImage()).into(holder.contactImg);
-        Log.i("xyz",String.valueOf(contact
-                .getImage()));
+        Log.i("xyz",String.valueOf(contact.getImage()
+               ));
         //holder.bind(mContactList.get(position));
     }
 
