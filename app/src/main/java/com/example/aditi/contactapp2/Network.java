@@ -88,7 +88,7 @@ public class Network {
             String image = ob.getString("image");
             Log.i("nat",image);
 
-            Contact contacts1 = new Contact(name, image, phone);
+            Contact contacts1 = new Contact(name, phone, image);
             contacts.add(contacts1);
 
         }

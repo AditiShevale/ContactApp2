@@ -18,6 +18,8 @@ import org.json.JSONException;
 import java.net.URL;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
    private Recycler mRecyclerContact;
