@@ -1,24 +1,19 @@
 package com.example.aditi.contactapp2;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.Toast;
+
+import com.example.aditi.contactapp2.Pojo.Contact;
+import com.example.aditi.contactapp2.Pojo.Recycler;
 
 import org.json.JSONException;
 
 import java.net.URL;
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 

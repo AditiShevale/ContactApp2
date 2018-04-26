@@ -1,4 +1,4 @@
-package com.example.aditi.contactapp2;
+package com.example.aditi.contactapp2.Pojo;
 
 import android.content.Context;
 import android.net.Uri;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.aditi.contactapp2.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

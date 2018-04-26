@@ -1,4 +1,4 @@
-package com.example.aditi.contactapp2;
+package com.example.aditi.contactapp2.Pojo;
 
 import android.os.Parcel;
 import android.os.Parcelable;

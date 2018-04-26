@@ -3,6 +3,8 @@ package com.example.aditi.contactapp2;
 import android.net.Uri;
 import android.util.Log;
 
+import com.example.aditi.contactapp2.Pojo.Contact;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
